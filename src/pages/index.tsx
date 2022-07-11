@@ -6,11 +6,11 @@ const Home: NextPage = () => {
   const hello = trpc.useQuery(["example.hello", { text: "from Railway" }]);
 
   const test = trpc.useQuery(["example.getAll"]);
-  console.log(test.data);
+  console.log("testData", test.data);
 
   const createExample = trpc.useMutation(["example.create"]);
 
-  console.log(process.env);
+  console.log("environment", process.env);
 
   return (
     <>
