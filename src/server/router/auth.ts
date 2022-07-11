@@ -19,4 +19,14 @@ export const authRouter = createRouter()
     async resolve({ ctx }) {
       return "You are logged in and can see this secret message!";
     },
+  })
+  .mutation("login", {
+    // Check if the user is logged in
+
+    async resolve({ ctx }) {
+      return {
+        message: "You are now logged in!",
+        session: ctx.session,
+      };
+    },
   });
